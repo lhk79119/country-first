@@ -1,0 +1,74 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width">
+<style>
+:root{--bg:#fff;--fg:#15201b;--mut:#6b7772;--line:#e4e9e6;--acc:#0f6b4f;--tint:#e6f2ec;--field:#f3f5f4;--knob:#fff;color-scheme:light}
+@media (prefers-color-scheme:dark){:root{--bg:#171c1a;--fg:#ecf1ee;--mut:#8d9993;--line:#2a322e;--acc:#5fd3a6;--tint:#1d382f;--field:#1f2623;--knob:#171c1a;color-scheme:dark}}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+body{margin:0;background:var(--bg);color:var(--fg);font:14px/1.4 "Segoe UI Variable Text","Segoe UI",-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR",sans-serif;-webkit-font-smoothing:antialiased}
+main{width:340px;margin:0 auto;padding:14px 16px 12px}
+body.tab{background:var(--field)}
+body.tab main{width:380px;margin-top:56px;padding:20px 22px 16px;background:var(--bg);border-radius:20px}
+button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer}
+:focus-visible{outline:2px solid var(--acc);outline-offset:2px}
+
+header{display:flex;align-items:center;gap:8px}
+header img{width:22px;height:22px}
+header h1{margin:0;font-size:13px;font-weight:600;letter-spacing:-.01em}
+.lang{margin-left:auto;display:flex;padding:2px;background:var(--field);border-radius:8px}
+.lang button{padding:3px 9px;border-radius:6px;font-size:11px;font-weight:600;letter-spacing:.04em;color:var(--mut)}
+.lang button[aria-pressed=true]{background:var(--bg);color:var(--fg);box-shadow:0 0 0 1px var(--line)}
+
+.cur{margin:18px 0 14px}
+.cur small{display:block;font-size:12px;color:var(--mut)}
+.cur div{display:flex;align-items:baseline;gap:10px;margin-top:2px}
+.cur strong{flex:1;min-width:0;font-size:24px;line-height:1.2;font-weight:700;letter-spacing:-.025em;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.cur span{font-size:12px;font-weight:600;letter-spacing:.08em;color:var(--acc)}
+
+#q{width:100%;height:36px;padding:0 12px 0 34px;border:0;border-radius:10px;font:inherit;color:var(--fg);outline:none;
+  background:var(--field) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='none' stroke='%23808a85' stroke-width='1.6' stroke-linecap='round'%3E%3Ccircle cx='7' cy='7' r='4.5'/%3E%3Cpath d='m10.5 10.5 3 3'/%3E%3C/svg%3E") 11px center no-repeat}
+#q::placeholder{color:var(--mut)}
+#q:focus{box-shadow:0 0 0 2px var(--acc)}
+#q::-webkit-search-cancel-button{display:none}
+
+ul{position:relative;list-style:none;margin:8px -6px 0;padding:0 6px;height:238px;overflow-y:auto;scrollbar-width:thin;scrollbar-color:var(--line) transparent}
+li{display:flex;align-items:center;gap:10px;height:34px;padding:0 10px;border-radius:8px;cursor:pointer}
+li:hover{background:var(--field)}
+li b{flex:1;min-width:0;font-weight:400;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+li i{font-style:normal;font-size:11px;letter-spacing:.06em;color:var(--mut)}
+li.on{background:var(--tint);color:var(--acc)}
+li.on b{font-weight:600}
+li.on i{color:var(--acc)}
+li.on::after{content:"";width:14px;height:14px;background:var(--acc);-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14 14' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m2.5 7.5 3 3 6-7'/%3E%3C/svg%3E") center/contain no-repeat}
+.none{height:238px;margin:8px 0 0;display:grid;place-items:center;color:var(--mut);font-size:13px}
+
+.opts{margin-top:10px;padding-top:6px;border-top:1px solid var(--line)}
+.opts label,.opts div{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:36px;font-size:13px}
+.opts label{cursor:pointer}
+.opts input{appearance:none;flex:none;width:32px;height:18px;margin:0;border-radius:9px;background:var(--line);cursor:pointer;position:relative;transition:background .15s}
+.opts input::before{content:"";position:absolute;top:2px;left:2px;width:14px;height:14px;border-radius:50%;background:var(--knob);box-shadow:0 0 0 .5px rgba(0,0,0,.08);transition:transform .15s}
+.opts input:checked{background:var(--acc)}
+.opts input:checked::before{transform:translateX(14px)}
+.keys{display:flex;align-items:center;gap:4px;margin-left:auto;margin-right:4px}
+kbd{font:600 11px/1 inherit;font-family:inherit;min-width:22px;text-align:center;padding:5px 6px;border-radius:6px;background:var(--field);box-shadow:inset 0 -1.5px 0 var(--line)}
+#change{font-size:13px;font-weight:600;color:var(--acc)}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style></head>
+<body>
+<main>
+  <header><img src="icons/icon48.png" alt=""><h1 data-i18n="appName"></h1>
+    <div class="lang" role="group" aria-label="Language"><button data-lang="en">EN</button><button data-lang="ko">KO</button></div></header>
+  <section class="cur"><small data-i18n="myCountry"></small><div><strong id="curName"></strong><span id="curCode"></span></div></section>
+  <input type="search" id="q" autocomplete="off">
+  <ul id="list"></ul>
+  <p class="none" id="none" hidden data-i18n="noMatch"></p>
+  <section class="opts">
+    <label><span data-i18n="promote"></span><input type="checkbox" id="promote"></label>
+    <label><span data-i18n="autoSelect"></span><input type="checkbox" id="autoSelect"></label>
+    <div><span data-i18n="shortcut"></span><span class="keys" id="keys"></span><button id="change" data-i18n="change"></button></div>
+  </section>
+</main>
+<script src="data.js"></script>
+<script src="common.js"></script>
+<script src="popup.js"></script>
+</body></html>

@@ -1,0 +1,4 @@
+node_modules/
+tools/raw.json
+*.zip
+.DS_Store

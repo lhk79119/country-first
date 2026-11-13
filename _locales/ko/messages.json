@@ -1,0 +1,14 @@
+{
+ "name": {
+  "message": "국가 선택기"
+ },
+ "description": {
+  "message": "스크롤은 이제 그만. 어느 사이트든 내 나라를 맨 위로 올리고, Alt+K 한 번에 바로 고릅니다."
+ },
+ "cmdPick": {
+  "message": "지금 칸에서 내 나라 선택"
+ },
+ "shortName": {
+  "message": "국가 선택기"
+ }
+}

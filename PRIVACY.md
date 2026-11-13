@@ -1,51 +1,36 @@
 # Privacy Policy
 
-Last updated: 2026-11-13
+Effective date: November 13, 2026
 
-Country First does not collect, transmit, sell or share any user data.
+This Privacy Policy explains how the Country First browser extension (the "Extension") handles user information.
 
-## Data read on pages
+## Information Collected
 
-To find country pickers, the extension reads the text and attributes of list items on the pages you visit. This happens entirely inside your browser. Nothing read from a page is stored or sent anywhere.
+The Extension does not collect personal information. No user data is transmitted to the developer or to any third party.
 
-## Data stored
+## Information Processed on the Device
 
-Only your settings: the country you chose, the two options (move to top, fill empty fields) and the display language. They are saved with Chrome's `storage.sync`, so if you have Chrome sync turned on, Chrome keeps them in your own Google account and copies them to your other devices. The developer has no access to them.
+To identify country selection fields, the Extension reads the text and attributes of list elements on web pages the user visits. This processing takes place solely within the user's browser. Page content is not recorded, retained or transmitted.
 
-## Data sent
+## Information Stored
 
-None. The extension makes no network requests, loads no remote code and contains no analytics or advertising.
+The Extension stores the user's settings: the selected country, two feature options and the interface language. These settings are saved through the `chrome.storage.sync` API. Where Chrome sync is enabled, Chrome stores the settings in the user's own Google account and synchronizes them across the user's devices. The developer has no access to this data.
+
+## Disclosure to Third Parties
+
+The Extension does not sell, transfer or disclose user data to third parties. It makes no network requests, loads no remotely hosted code, and includes no analytics or advertising components.
 
 ## Permissions
 
-- `storage`: saves the settings above.
-- `scripting` and access to all sites: country pickers can appear on any site and in any frame, so the extension has to look for them on every page. It also uses `scripting` to make the shortcut work in tabs that were already open when the extension was installed.
+The Extension requests the following permissions:
+
+- `storage`, to save the settings described above.
+- `scripting` and access to all websites, because country selection fields may appear on any website and in any frame. The `scripting` permission is also used to enable the keyboard shortcut in tabs that were open before the Extension was installed or updated.
+
+## Changes to This Policy
+
+This policy may be updated when the Extension changes. The current version is published at this address, and the effective date above reflects the most recent revision.
 
 ## Contact
 
-Questions and reports: https://github.com/lhk79119/country-first/issues
-
-# 개인정보처리방침
-
-국가 선택기(Country First)는 사용자 데이터를 수집하지도, 전송하지도, 판매하거나 공유하지도 않습니다.
-
-## 페이지에서 읽는 정보
-
-국가 선택창을 찾으려고 방문한 페이지의 목록 항목 글자와 속성을 읽습니다. 이 과정은 전부 브라우저 안에서 끝나며, 페이지에서 읽은 내용은 저장하지도 어디로 보내지도 않습니다.
-
-## 저장하는 정보
-
-설정만 저장합니다. 고른 나라, 옵션 두 가지(맨 위로 올리기, 빈 칸 자동 채우기), 표시 언어입니다. 크롬의 `storage.sync`에 저장하므로, 크롬 동기화를 켜 두었다면 크롬이 이 설정을 사용자 본인의 구글 계정에 보관하고 다른 기기로 옮깁니다. 개발자는 이 값에 접근할 수 없습니다.
-
-## 전송하는 정보
-
-전송하는 정보가 없습니다. 네트워크 요청을 하지 않고, 원격 코드를 불러오지 않으며, 분석 도구나 광고가 들어 있지 않습니다.
-
-## 권한
-
-- `storage`: 위 설정을 저장합니다.
-- `scripting`과 모든 사이트 접근: 국가 선택창은 어느 사이트, 어느 프레임에든 나타날 수 있어 모든 페이지에서 찾아야 합니다. 확장을 설치하기 전에 열려 있던 탭에서도 단축키가 동작하도록 하는 데에도 `scripting`을 씁니다.
-
-## 문의
-
-질문과 제보: https://github.com/lhk79119/country-first/issues
+Questions regarding this policy may be submitted at https://github.com/lhk79119/country-first/issues.

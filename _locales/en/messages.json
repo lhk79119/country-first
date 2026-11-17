@@ -3,7 +3,7 @@
   "message": "Country First – find your country in any dropdown"
  },
  "description": {
-  "message": "Stop scrolling for your country. Set it once: it jumps to the top of every country picker, and Alt+K selects it instantly."
+  "message": "Stop scrolling for your country. Set it once and it jumps to the top of every country picker."
  },
  "cmdPick": {
   "message": "Select my country in the current field"
